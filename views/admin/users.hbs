@@ -1,0 +1,31 @@
+<section>
+    <div class="container">
+        <div class="row mt-4">
+            <a href="#" class="btn btn-success ml-auto mb-5">Add User</a>
+        </div>
+        <table class="table mt-5" id="usersTable">
+            <thead>
+                <tr>                    
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Email}}</td>
+                    <!--<td>
+                        <a href="/admin/view-order-products/{{this._id}}" class="btn btn-primary">View Products</a>
+                    </td>-->
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+<script>
+  $(function() {
+    $('#usersTable').DataTable();
+  })
+</script>

@@ -1,0 +1,73 @@
+<section class="bg-light" id="contact-section" style="padding-top: 9em; padding-bottom: 1em;">
+      <div class="container">
+          <h2 class="text-info text-center">Contact Us</h2> 
+          <p class="text-light bg-info">വി.എച്ച്.എസ്.ഇ ഒന്നാം അലോട്ട്മെൻറ് ലിസ്റ്റ് പ്രസിദ്ധീകരിച്ചു. അലോട്ട്മെൻറ് ലഭിച്ച കുട്ടികൾ 00.00.0000, 0.00 മണിക്ക് മുൻപായി അലോട്ട്മെൻറ് ലഭിച്ച സ്‌കൂളിൽ പ്രവേശനം നേടണം. അലോട്ട്‌മെന്റ് സ്ലിപ് ഇ-മെയിലിൽ ആവശ്യമുള്ളവ‍ര്‍ ‍താഴെ കൊടുത്തിരിക്കുന്ന ഫോം പൂരിപ്പിച്ചു സബ്മിറ്റ് ചെയ്യുക.. </p>           
+          <div class="row">
+              <div class="col-md-12">
+              <form id="submit-form" method="POST" action="">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="fname">Name</label>
+                      <input type="text" class="form-control" id="fname" name="name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputDob4">Date of Birth</label>
+                      <input type="date" class="form-control" id="inputDob4" name="dob" placeholder="Enter DOB">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputApplicationNo4">Application No</label>
+                        <input type="text" class="form-control" id="inputApplicationNo4" name="appno" placeholder="Enter Application No">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputRegisterNumber4">Register Number</label>
+                        <input type="text" class="form-control" id="inputRegisterNumber4" name="regno" placeholder="Enter Register Number">
+                      </div>
+                    </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="inputEmail4">Email</label>
+                          <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Enter Email id">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputMobile4">Mobile</label>
+                          <input type="tel" class="form-control" id="inputMobile4" name="mobile" placeholder="Enter Mobile Number">
+                        </div>
+                  </div>                
+                  <div class="form-group">
+                    <label for="inputMessage4">Message</label>
+                    <textarea class="form-control" id="inputMessage4" name="message" cols="30" rows="10" placeholder="Type your Message here"></textarea>
+                  </div>
+                  <div class="form-group text-center">               
+                  <input type="submit" class="form-control btn btn-info" value="Submit" style="width: 25%;">
+                  </div>
+              </form>
+              </div>
+          </div>
+      </div>
+  </section>  
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+      <script src="script.js"></script>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxVdcyAZ0rPd-W4XC71tdoLekw7meGz4JGCOS8W/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully. Please check your email for allotment slip")
+                    document.getElementById("submit-form").reset();
+                    //window.location.reload()
+                    //window.location.href="./index.html"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+      </script>

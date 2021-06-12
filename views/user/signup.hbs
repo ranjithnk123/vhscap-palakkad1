@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Create new account</h2>
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="Name" placeholder="Enter Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" class="form-control" id= "Email" name="Email" placeholder="Enter email" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Password" required minlength="8">
+                </div>
+                <a href="/login">Already have an account ?</a>
+                <button type="submit" class="btn btn-primary float-right">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+const email = document.getElementById("mail");
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I am expecting an e-mail address!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+</script>
