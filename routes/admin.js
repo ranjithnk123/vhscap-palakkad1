@@ -14,10 +14,7 @@ router.get('/', verifyLogin, function(req, res, next) {
   let admin = req.session.admin
   console.log(admin)
   if(req.session.admin){
-    productHelpers.getAllProducts().then((products) =>{
-    console.log(products)
-    res.render('admin/view-products', {products, admin})
-  })
+    res.render('', {admin})
   }
 });
 router.get('/login', (req,res) => {

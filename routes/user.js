@@ -53,19 +53,19 @@ router.get('/logout', (req, res) => {
   req.session.userLoggedIn = false
   res.redirect('/')
 })
-router.get('/admission-info', function(req,res){
-  res.render('user/admission-info', {user: req.session.user})
-})
-router.get('/help-desk', function(req,res){
+router.get('/help-desk', verifyLogin, function(req,res){
   res.render('user/help-desk', {user: req.session.user})
 })
-router.get('/students', (req, res) => {
+router.get('/admission-info', verifyLogin, function(req,res){
+  res.render('user/admission-info', {user: req.session.user})
+})
+router.get('/students', verifyLogin, (req, res) => {
   res.render('user/students', {user: req.session.user})
 })
-router.get('/staff', (req, res) => {
+router.get('/staff', verifyLogin, (req, res) => {
   res.render('user/staff', {user: req.session.user})
 })
-router.get('/contact-us', (req, res) => {
+router.get('/contact-us', verifyLogin, (req, res) => {
   res.render('user/contact-us', {user: req.session.user})
 })
 
